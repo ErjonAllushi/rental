@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="slide.css">
+    <style>
+       
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+        .slide2 {
+            overflow: hidden;
+            left: 18.5%;
+            width: 810px;
+            height: 510px;
+            position: relative;
+            border-radius: 5px 50px;
+        }
+        .slide img {
+            position: relative;
+            left: 1.8%;
+            top: 3%;
+            z-index: 10;
+            border-radius: 5px 50px;
+        }
+        .slide2::before,
+        .slide2::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -50%;
+            width: 790px;
+            height: 490px;
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+        }
+        .slide2::before {
+            background: linear-gradient(60deg, transparent, #45f3ff, #45f3ff);
+        }
+        .slide2::after {
+            background: linear-gradient(60deg, transparent, rgb(205, 15, 34), rgb(205, 15, 34));
+            animation-delay: -3s;
+        }
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .column {
+            padding: 20px;
+            float: left;
+            position: relative;
+            width: 98%;
+            left: 15px;
+        }
+        .column.side,
+        .column.middle,
+        .column.side1 {
+            width: 30%;
+            text-align: center;
+            color: gold;
+        }
+        .column.middle {
+            margin: 0 20px;
+        }
+        .column img {
+            border: 5px solid;
+            border-color: #201f1c;
+            border-style: outset;
+            border-radius: 20px;
+            width: 350px;
+            height: 250px;
+        }
+        .footer {
+            text-align: center;
+            padding: 70px;
+        }
+        #a1,
+        #a2 {
+            position: absolute;
+            width: 216px;
+            height: 500px;
+            background: none;
+            border: none;
+        }
+        #a1 {
+            left: 1%;
+            bottom: 1%;
+        }
+        #a2 {
+            right: 1%;
+            bottom: 1%;
+        }
+        video {
+            position: absolute;
+            right: 0;
+            bottom: -96px;
+            z-index: -1;
+        }
+        #c1,
+        #c2,
+        #c3 {
+            display: none;
+        }
+        #d1,
+        #d2,
+        #d3 {
+            width: 200px;
+            height: 50px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 10px;
+        }
+        #d1:hover,
+        #d2:hover,
+        #d3:hover {
+            background: gold;
+            border-radius: 10px;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .slide2 {
+                left: 10%;
+                width: 90%;
+                height: auto;
+            }
+            .slide img {
+                width: 100%;
+                left: 0;
+            }
+            .column.side,
+            .column.middle,
+            .column.side1 {
+                width: 100%;
+                margin: 0 auto;
+            }
+            .column img {
+                width: 80%;
+                height: auto;
+            }
+            .footer {
+                padding: 50px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .slide2 {
+                left: 5%;
+                width: 90%;
+                height: auto;
+            }
+            .slide img {
+                width: 100%;
+                left: 0;
+            }
+            .column {
+                width: 100%;
+                padding: 10px;
+                left: 0;
+            }
+            .column img {
+                width: 100%;
+                height: auto;
+            }
+            #a1,
+            #a2 {
+                width: 100px;
+                height: auto;
+            }
+            .footer {
+                padding: 30px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .slide2 {
+                left: 2%;
+                width: 96%;
+                height: auto;
+            }
+            .slide img {
+                width: 100%;
+                left: 0;
+            }
+            .column {
+                width: 100%;
+                padding: 5px;
+                left: 0;
+            }
+            .column img {
+                width: 100%;
+                height: auto;
+            }
+            #a1,
+            #a2 {
+                width: 50px;
+                height: auto;
+            }
+            .footer {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script src="index.js"></script>
+</head>
+<body>
+    
+   
+
+    <div class="nav1">
+        <label class="logo">RENTCARALBANIA</label>
+        <ul>
+            <li><a class="a1" href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+    <div class="animate1"></div><br>
+    <div class="video1">
+        <video autoplay loop muted plays-inline>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="slide">
+            <button id="a1" onclick="prev()"></button>
+            <div class="slide2">
+                <img id="demo" src="4.jpeg.jpeg" width="780px" height="480px">
+            </div>
+            <button id="a2" onclick="next()"></button>
+        </div>
+        <div class="column">
+            <div class="column side">
+                <img src="fotolink1.html"><br>
+                <p>
+                    <i>MERCEDES-BENZ C CLASS</i><br>
+                    <button id="d1">Lexo me shume.</button><br>
+                    <i id="c1"> 
+                        Mercedes-Benz C class vjen ne sherbimin tuaj ne cdo moment.
+                        Fuqia motorrike: 2200cc,
+                        Kuaj fuqi:250. 
+                        Makina eshte ekonomike me nje kosto 5l per 100km.
+                    </i>
+                </p>
+            </div>
+            <div class="column middle">
+                <img src="f3link2.html"><br>
+                <p>
+                    <i>AUDI A6</i><br>
+                    <button id="d2">Lexo me shume.</button><br>
+                    <i id="c2">  Audi A6 vjen ne sherbimin tuaj ne cdo moment.
+                        Fuqia motorrike: 3000cc,
+                        Kuaj fuqi:300. 
+                        Makina eshte ekonomike me nje kosto 6l per 100km.
+                    </i>
+                </p>
+            </div>
+            <div class="column side1" id="e1">
+                <img src="flink3.html"><br>
+                <p>
+                    <i>BMW SERIE 3</i><br>
+                    <button id="d3">Lexo me shume.</button><br>
+                    <div id="c3">
+                        <i>BMW Serie 3 vjen ne sherbimin tuaj ne cdo moment.
+                            Fuqia motorrike: 2000cc,
+                            Kuaj fuqi:200. 
+                            Makina eshte ekonomike me nje kosto 4l per 100km. 
+                        </i>
+                    </div>
+                </p>
+            </div>
+        </div>
+        <br><br><br><br>
+        <div class="footer"><br>
+            <h3 style="color: gold;">
+                Ju nevojitet nje makine e re, e mire, e rehatshme dhe luksoze?<br>
+                RENTCAR ALBANIA vjen ne disposicionin tuaj ne cdo moment per te ofruar makinen qe ju deshironi.<br>
+                Marka dhe lloje te ndryshme te makina i gjeni vetem tek ne "RENTCAR ALBANIA".<br>
+                Ju mirepresim.<br>
+                Na gjeni  RENTCARALBANIA@gmail.com 
+            </h3>
+        </div>
+    </div>
+</body>
+</html>

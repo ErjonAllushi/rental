@@ -1,0 +1,36 @@
+/*stilizim i jashtem*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.animate1{
+    width: 100%;
+    position: relative;
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 5px;
+    background-color: red;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate1 4s linear infinite;
+}
+/*animation*/
+@keyframes animate1 {
+    0% {
+        width: 100px;
+    }
+    50% {width: 1250px}
+
+    100% {width: 100px;}
+}
+
+
+ 
+
+
+
+
+    

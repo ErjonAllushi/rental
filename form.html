@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .box {
+        position: relative;
+        width: 90%;
+        max-width: 500px;
+        height: 450px;
+        background-color: dimgray;
+        border-radius: 50px 5px;
+        overflow: hidden;
+        display: flex;
+        margin: 20px auto;
+      }
+
+      .box::before,
+      .box::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 370px;
+        height: 450px;
+        background: linear-gradient(60deg, transparent, #45f3ff, #45f3ff);
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+      }
+
+      .box::after {
+        background: linear-gradient(
+          60deg,
+          transparent,
+          rgb(205, 15, 34),
+          rgb(205, 15, 34)
+        );
+        animation-delay: -3s;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      form {
+        position: absolute;
+        inset: 7px;
+        border-radius: 50px 5px;
+        text-align: center;
+        background-color: rgb(67, 66, 60);
+        z-index: 10;
+        padding: 20px;
+      }
+
+      p {
+        font-size: 24px;
+        color: white;
+        text-decoration: underline;
+        margin-bottom: 20px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select {
+        width: 80%;
+        padding: 14px 20px;
+        margin: 10px 0;
+        color: #000;
+        border: 1px solid #030000;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background: rgb(67, 66, 60);
+        border: none;
+        outline: none;
+      }
+
+      input[type="text"]:hover,
+      input[type="email"]:hover,
+      select:hover {
+        background: #45f3ff;
+        color: #000;
+      }
+
+      input[type="submit"] {
+        width: 80%;
+        font-size: 20px;
+        background-color: #45f3ff;
+        color: white;
+        padding: 10px 0;
+        margin: 20px 0;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: rgb(205, 15, 34);
+      }
+
+      h3 {
+        color: #45f3ff;
+        text-decoration: underline;
+      }
+
+      label {
+        color: #45f3ff;
+        font-size: 18px;
+      }
+
+      video {
+        position: absolute;
+        right: 0;
+        bottom: -94px;
+        z-index: -1;
+      }
+
+      .nav1 {
+        height: 80px;
+        width: 100%;
+        background-color: #333;
+      }
+
+      .logo {
+        font-size: 35px;
+        font-weight: bold;
+        color: white;
+        padding: 0 100px;
+        line-height: 80px;
+      }
+
+      .nav1 ul {
+        float: right;
+        margin-right: 40px;
+      }
+
+      .nav1 li {
+        display: inline-block;
+        margin: 0 8px;
+        line-height: 80px;
+      }
+
+      a {
+        color: white;
+        font-size: 18px;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        padding: 7px 10px;
+        border-radius: 3px;
+      }
+
+      a.a1,
+      a:hover {
+        border: 1px solid white;
+        transition: 0.5s;
+      }
+
+      @media screen and (max-width: 768px) {
+        .logo {
+          padding: 0 20px;
+        }
+
+        .nav1 ul {
+          margin-right: 10px;
+        }
+
+        .nav1 li {
+          margin: 0 5px;
+        }
+
+        .box {
+          width: 90%;
+        }
+
+        form {
+          padding: 10px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+
+        input[type="submit"] {
+          font-size: 18px;
+          padding: 8px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav1">
+      <label class="logo">RENTCARALBANIA</label>
+      <ul>
+        <li><a class="a1" href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div class="video1">
+      <video autoplay loop muted plays-inline>
+        <source src="video.mp4" type="video/mp4" />
+      </video>
+      <div class="box">
+        <form>
+          <p>Regjistroni te dhenat</p>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Emri juaj.."
+            required
+          /><br />
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="Mbiemri juaj.."
+            required
+          /><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+            required
+          /><br />
+          <h3>Zgjidhni makinen</h3>
+          <select id="Marka" name="Marka">
+            <option value="Merzedes-Benz">Mercedes-Benz</option>
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option></select
+          ><br />
+          <label for="Kohezgjatja">Nr i diteve:</label><br />
+          <input
+            type="number"
+            id="Kohezgjatja"
+            name="Kohezgjatja"
+            min="1"
+            max="15"
+            required
+          /><br />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
